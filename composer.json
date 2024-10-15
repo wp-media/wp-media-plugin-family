@@ -1,0 +1,20 @@
+{
+    "name": "wp-media/wp-media-plugin-family",
+    "description": "Organizes and displays WP Media plugin family across other members.",
+	"license": "GPL-3.0-or-later",
+	"authors": [
+		{
+			"name": "WP Media",
+			"email": "contact@wp-media.me",
+			"homepage": "https://wp-media.me"
+		}
+	],
+	"config": {
+		"sort-packages": true
+	},
+    "autoload": {
+        "psr-4": {
+            "WPMediaPluginFamily\\": "src/"
+        }
+    }
+}
