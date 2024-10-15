@@ -6,11 +6,8 @@
 	<!-- For help in using PHPCS: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Usage -->
 
 	<!-- ** WHAT TO SCAN ** -->
-
 	<file>src</file>
-
 	<!-- ** HOW TO SCAN ** -->
-
 	<arg value="sp"/><!-- Show sniff and progress -->
 	<arg name="colors"/><!-- Show results with colors -->
 	<arg name="parallel" value="50"/><!-- Enables parallel processing when available for faster results. -->
