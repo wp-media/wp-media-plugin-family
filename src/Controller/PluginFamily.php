@@ -1,6 +1,6 @@
 <?php
 
-namespace WPMediaFamilyPlugin\Controller;
+namespace WPMediaPluginFamily\Controller;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -33,12 +33,13 @@ class PluginFamily implements PluginFamilyInterface {
 	 *
 	 * @return array
 	 */
-	private static function get_post_install_event(): array {
+	public static function get_post_install_event(): array {
 		$allowed_plugin = [
 			'uk-cookie-consent',
 			'backwpup',
 			'imagify-plugin',
 			'seo-by-rank-math',
+			'wp-rocket',
 		];
 
 		if ( ! isset( $_GET['action'], $_GET['_wpnonce'], $_GET['plugin_to_install'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
