@@ -10,11 +10,24 @@
 		}
 	],
 	"config": {
-		"sort-packages": true
+		"sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
 	},
+    "require-dev": {
+        "phpcompatibility/phpcompatibility-wp": "^2.0",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+        "wp-coding-standards/wpcs": "^3"
+    },
     "autoload": {
         "psr-4": {
             "WPMediaPluginFamily\\": "src/"
         }
-    }
+    },
+    "scripts": {
+		"install-codestandards": "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run",
+		"phpcs": "phpcs --basepath=.",
+		"phpcs:fix": "phpcbf"
+	}
 }
