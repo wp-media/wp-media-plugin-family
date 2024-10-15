@@ -1,6 +1,6 @@
 <?php
 
-namespace WPMediaFamilyPlugin\Model;
+namespace WPMediaPluginFamily\Model;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -107,6 +107,10 @@ class PluginFamily {
 				// Set activation text.
 				if ( file_exists( WP_PLUGIN_DIR . '/' . $plugin_path ) ) {
 					$plugins[ $cat ]['plugins'][ $plugin ]['cta']['text'] = 'Activate';
+
+					if ( 'wp-rocket/wp-rocket' === $plugin ) {
+						$plugins[ $cat ]['plugins'][ $plugin ]['cta']['url'] = $install_activate_url;
+					}
 				}
 
 				// Send inactive plugins to new array.
@@ -135,7 +139,7 @@ class PluginFamily {
 	 *
 	 * @return string
 	 */
-	private function get_current_url(): string {
+	protected function get_current_url(): string {
 		if ( ! isset( $_SERVER['SERVER_PORT'], $_SERVER['HTTP_HOST'] ) ) {
 			return '';
 		}
