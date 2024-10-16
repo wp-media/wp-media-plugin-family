@@ -37,7 +37,7 @@ class View {
 ```
 The model returns an array with 2 keys ( categorized & uncategorized )
 - The categorized version has the plugins grouped by their categories.
-- The uncategorized version reverse of the former.
+- The uncategorized version is the reverse of the former.
 
 Next, we need to invoke the controller responsible for managing the installation and activation. This controller has a corresponding interface that needs to be implemented.
 
