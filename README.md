@@ -35,7 +35,8 @@ class View {
 	}
 }
 ```
-The model returns an array with 2 keys ( categorized & uncategorized )
+The model returns an array with 2 keys ( categorized & uncategorized ). This for plugins like WP Rocket that needs to display the plugins by category.
+
 - The categorized version has the plugins grouped by their categories.
 - The uncategorized version is the reverse of the former.
 
