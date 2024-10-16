@@ -70,3 +70,29 @@ class Subscriber implements SubscriberInterface, PluginFamilyInterface {
 The methods ( `install_activate` & `display_error_notice` ) are required.
 
 PS: This example is based on the assumption that your plugin utilizes EDA. If EDA is not available, you can iterate through the events returned by `PluginFamily::get_subscribed_events()` and use `add_action` accordingly.
+
+## Development & Testing
+
+To facilitate development and testing of the package, it is recommended to specify a development branch in the composer.json file of your project.
+
+## Taking WP Rocket as example
+
+```JSON
+"require": {
+    "wp-media/wp-media-plugin-family": "dev-whatever-dev-branch"
+}
+```
+
+PS: Always have the dev prefix before the actual branch.
+
+```JSON
+"require": {
+    "wp-media/wp-media-plugin-family": "dev-develop"
+}
+"repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/wp-media/wp-media-plugin-family"
+        }
+    ]
+```
