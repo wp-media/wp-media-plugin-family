@@ -202,6 +202,19 @@ $expectedActivateTextIfPluginIsAlreadyInstalled = [
             'url'  => 'http://example.org/wp-admin/admin-post.php?action=plugin_family_install_wp-rocket&_wpnonce=9a68f00b8d&plugin_to_install=wp-rocket%2Fwp-rocket'
         ],
     ],
+    'imagify-plugin/imagify' => [
+        'logo'  => [
+            'file'  => 'logo-imagify.svg',
+            'width' => '50%',
+        ],
+        'title' => 'Speed Up Your Website With Lighter Images',
+        'desc'  => 'Imagify is the easiest WordPress image optimizer. It automatically compresses images, converts them to WebP and AVIF formats, and lets you resize and optimize with just one click!',
+        'link'  => 'https://imagify.io/',
+        'cta'   => [
+            'text' => 'Activate',
+            'url'  => 'http://example.org/wp-admin/admin-post.php?action=install_imagify_from_partner_backwpup&_wpnonce=9a68f00b8d&_wp_http_referer=http%253A%252F%252Fexample.org%252Fwp-admin'
+        ],
+    ],
     'seo-by-rank-math/rank-math' => [
         'logo'  => [
             'file'  => 'logo-rank-math.svg',
@@ -213,19 +226,6 @@ $expectedActivateTextIfPluginIsAlreadyInstalled = [
         'cta'   => [
             'text' => 'Activate',
             'url'  => 'http://example.org/wp-admin/admin-post.php?action=plugin_family_install_seo-by-rank-math&_wpnonce=9a68f00b8d&plugin_to_install=seo-by-rank-math%2Frank-math'
-        ],
-    ],
-    'backwpup/backwpup'                   => [
-        'logo'  => [
-            'file'  => 'logo-backwpup.svg',
-            'width' => '60%',
-        ],
-        'title' => 'The Easiest Way to Protect Your Website',
-        'desc'  => 'BackWPup is the most comprehensive and user-friendly backup & restore plugin for WordPress. Easily schedule automatic backups, securely store and restore with just a few clicks!',
-        'link'  => 'https://backwpup.com/',
-        'cta'   => [
-            'text' => 'Activate',
-            'url'  => 'http://example.org/wp-admin/admin-post.php?action=plugin_family_install_backwpup&_wpnonce=9a68f00b8d&plugin_to_install=backwpup%2Fbackwpup'
         ],
     ],
     'uk-cookie-consent/uk-cookie-consent' => [
@@ -328,7 +328,7 @@ return [
     'testShouldReturnActivateTextIfPluginIsAlreadyInstalled' => [
         'config' => [
             'plugins' => $plugins,
-            'main_plugin' => 'imagify-plugin/imagify',
+            'main_plugin' => 'backwpup/backwpup',
             'order' => 'uncategorized',
             'active_plugin' => '',
             'is_installed' => true,
