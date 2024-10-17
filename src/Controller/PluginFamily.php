@@ -175,7 +175,7 @@ class PluginFamily implements PluginFamilyInterface {
 			);
 		}
 
-		require_once $upgrader_class; // @phpstan-ignore-line
+		require_once $plugin_install; // @phpstan-ignore-line
 
 		$data = [
 			'slug'   => $this->get_slug(),
