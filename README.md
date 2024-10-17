@@ -1,4 +1,4 @@
-# WP Media Family Plugin
+# Plugin Family
 
 This package bundles the WP Media plugin collection within a single plugin.
 
