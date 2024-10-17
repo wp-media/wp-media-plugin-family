@@ -2,8 +2,6 @@
 
 namespace WPMedia\PluginFamily\Controller;
 
-defined( 'ABSPATH' ) || exit;
-
 interface PluginFamilyInterface {
 	/**
 	 * Process to install and activate plugin.
