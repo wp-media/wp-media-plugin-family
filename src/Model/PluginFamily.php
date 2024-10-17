@@ -2,8 +2,6 @@
 
 namespace WPMedia\PluginFamily\Model;
 
-defined( 'ABSPATH' ) || exit;
-
 /**
  * Handles the data to be passed to the frontend.
  */
@@ -30,7 +28,7 @@ class PluginFamily {
 	 * @return array
 	 */
 	public function filter_plugins_by_activation( array $plugins, string $main_plugin ): array {
-		if ( ! is_array( $plugins ) || empty( $plugins ) ) {
+		if ( empty( $plugins ) ) {
 			return [];
 		}
 

@@ -93,7 +93,17 @@ class PluginFamily implements PluginFamilyInterface {
 			return;
 		}
 
-		require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+		$upgrader_class = ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+
+		if ( ! defined( 'ABSPATH' ) || ! file_exists( $upgrader_class ) ) {
+			wp_die(
+				'Plugin Installation failed. class-wp-upgrader.php not found',
+				'',
+				[ 'back_link' => true ]
+			);
+		}
+
+		require_once $upgrader_class; // @phpstan-ignore-line
 
 		$upgrader = new \Plugin_Upgrader( new \Automatic_Upgrader_Skin() );
 		$result   = $upgrader->install( $this->get_download_url() );
@@ -155,7 +165,17 @@ class PluginFamily implements PluginFamilyInterface {
 	 * @return string
 	 */
 	private function get_download_url(): string {
-		require_once ABSPATH . 'wp-admin/includes/plugin-install.php';
+		$plugin_install = ABSPATH . 'wp-admin/includes/plugin-install.php';
+
+		if ( ! defined( 'ABSPATH' ) || ! file_exists( $plugin_install ) ) {
+			wp_die(
+				'Plugin Installation failed. plugin-install.php not found',
+				'',
+				[ 'back_link' => true ]
+			);
+		}
+
+		require_once $upgrader_class; // @phpstan-ignore-line
 
 		$data = [
 			'slug'   => $this->get_slug(),
@@ -179,6 +199,11 @@ class PluginFamily implements PluginFamilyInterface {
 
 		if ( is_wp_error( $plugin_info ) ) {
 			$this->set_error( $plugin_info );
+		}
+
+		// Ensure that $plugin_info is an object before accessing the property.
+		if ( ! is_object( $plugin_info ) || ! isset( $plugin_info->download_link ) ) {
+			return '';
 		}
 
 		return $plugin_info->download_link;
