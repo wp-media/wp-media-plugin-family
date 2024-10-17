@@ -11,11 +11,11 @@ PS: The Imagify Partner package needs be installed along side. refer [here](http
 
 ## Usage Instructions
 
-- Install using composer: `composer require wp-media/wp-media-plugin-family`
+- Install using composer: `composer require wp-media/plugin-family`
 - Import the model that holds the filtered data into your view class.
 
 ```php
-use WPMediaPluginFamily\Model\PluginFamily;
+use WPMedia\PluginFamily\Model\PluginFamily;
 
 class View {
     protected $plugin_family;
@@ -43,7 +43,7 @@ The model returns an array with 2 keys ( categorized & uncategorized ). This for
 Next, we need to invoke the controller responsible for managing the installation and activation. This controller has a corresponding interface that needs to be implemented.
 
 ```php
-use WPMediaPluginFamily\Controller\{ PluginFamily, PluginFamilyInterface };
+use WPMedia\PluginFamily\Controller\{ PluginFamily, PluginFamilyInterface };
 
 class Subscriber implements SubscriberInterface, PluginFamilyInterface {
 
@@ -80,20 +80,17 @@ To facilitate development and testing of the package, it is recommended to speci
 
 ```JSON
 "require": {
-    "wp-media/wp-media-plugin-family": "dev-whatever-dev-branch"
+    "wp-media/plugin-family": "dev-whatever-dev-branch"
 }
 ```
 
 PS: Always have the dev prefix before the actual branch.
 
 ```JSON
-"require": {
-    "wp-media/wp-media-plugin-family": "dev-develop"
-}
 "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/wp-media/wp-media-plugin-family"
+            "url": "https://github.com/wp-media/plugin-family"
         }
     ]
 ```
