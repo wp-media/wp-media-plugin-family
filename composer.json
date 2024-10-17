@@ -12,7 +12,8 @@
 	"config": {
 		"sort-packages": true,
         "allow-plugins": {
-            "dealerdirect/phpcodesniffer-composer-installer": true
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "phpstan/extension-installer": true
         }
 	},
     "require-dev": {
@@ -38,6 +39,7 @@
 		"phpcs": "phpcs --basepath=.",
 		"phpcs:fix": "phpcbf",
         "test-unit": "\"vendor/bin/phpunit\" --testsuite unit --colors=always --configuration tests/Unit/phpunit.xml.dist --coverage-php tests/report/unit.cov",
-        "report-code-coverage": "\"vendor/bin/phpcov\" merge tests/report --clover tests/report/coverage.clover"
+        "report-code-coverage": "\"vendor/bin/phpcov\" merge tests/report --clover tests/report/coverage.clover",
+        "phpstan": "vendor/bin/phpstan analyze --memory-limit=2G --no-progress"
 	}
 }
