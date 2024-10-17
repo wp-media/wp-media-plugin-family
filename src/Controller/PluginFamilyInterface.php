@@ -1,6 +1,6 @@
 <?php
 
-namespace WPMediaPluginFamily\Controller;
+namespace WPMedia\PluginFamily\Controller;
 
 defined( 'ABSPATH' ) || exit;
 

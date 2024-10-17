@@ -1,8 +1,6 @@
 <?php
 
-namespace WPMediaPluginFamily\Controller;
-
-defined( 'ABSPATH' ) || exit;
+namespace WPMedia\PluginFamily\Controller;
 
 /**
  * Handles installation and Activation of plugin family members.

@@ -1,6 +1,6 @@
 <?php
 
-namespace WPMediaPluginFamily\Tests\Unit;
+namespace WPMedia\PluginFamily\Tests\Unit;
 
 use ReflectionObject;
 use WPMedia\PHPUnit\Unit\TestCase as BaseTestCase;

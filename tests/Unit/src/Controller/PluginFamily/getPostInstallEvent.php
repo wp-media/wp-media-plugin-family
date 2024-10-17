@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace WPMediaPluginFamily\Tests\Unit\Model\PluginFamily;
+namespace WPMedia\PluginFamily\Tests\Unit\Model\PluginFamily;
 
 use Brain\Monkey\Functions;
-use WPMediaPluginFamily\Tests\Unit\TestCase;
-use WPMediaPluginFamily\Controller\PluginFamily;
+use WPMedia\PluginFamily\Tests\Unit\TestCase;
+use WPMedia\PluginFamily\Controller\PluginFamily;
 
 class TestGetPostInstallEvent extends TestCase {
 

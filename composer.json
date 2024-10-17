@@ -1,5 +1,5 @@
 {
-    "name": "wp-media/wp-media-plugin-family",
+    "name": "wp-media/plugin-family",
     "description": "Organizes and displays WP Media plugin family across other members.",
 	"license": "GPL-3.0-or-later",
 	"authors": [
@@ -23,8 +23,12 @@
     },
     "autoload": {
         "psr-4": {
-            "WPMediaPluginFamily\\": "src/",
-            "WPMediaPluginFamily\\Tests\\": "tests/"
+            "WPMedia\\PluginFamily\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "WPMedia\\PluginFamily\\Tests\\": "tests/"
         }
     },
     "scripts": {

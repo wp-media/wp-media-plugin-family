@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace WPMediaPluginFamily\Tests\Unit\Model\PluginFamily;
+namespace WPMedia\PluginFamily\Tests\Unit\Model\PluginFamily;
 
 use Brain\Monkey\Functions;
-use WPMediaPluginFamily\Tests\Unit\TestCase;
-use WPMediaPluginFamily\Model\PluginFamily;
+use WPMedia\PluginFamily\Tests\Unit\TestCase;
+use WPMedia\PluginFamily\Model\PluginFamily;
 
 class TestFilterPluginsByActivation extends TestCase {
 
