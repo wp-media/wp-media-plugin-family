@@ -22,13 +22,19 @@ class TestFilterPluginsByActivation extends TestCase {
 
     public function set_up() {
         parent::set_up();
+        
+        $this->plugin_family = new PluginFamily();
 
-        $this->plugin_family = $this->getMockBuilder(PluginFamily::class)
-                                ->setMethods( ['get_current_url'] )
-                                ->getMock();
+        $_SERVER = [
+            'SERVER_PORT' => 80,
+            'HTTP_HOST' => 'example.org',
+            'REQUEST_URI' => '/wp-admin',
+        ];
     }
 
     public function tear_down() {
+        $_SERVER = [];
+
 		parent::tear_down();
 	}
 
@@ -47,7 +53,11 @@ class TestFilterPluginsByActivation extends TestCase {
             return $plugin === $config['active_plugin'];
         } );
 
-        Functions\when( 'admin_url' )->justReturn( 'http://example.org/wp-admin/admin-post.php' );
+        Functions\when( 'admin_url' )->alias(
+			function ( $path ) {
+				return "http://example.org/wp-admin/{$path}";
+			}
+		);
         Functions\when( 'wp_create_nonce' )->justReturn( '9a68f00b8d' );
         Functions\when( 'add_query_arg' )->alias( function( $args, $link ) {
             $url = '';
@@ -59,7 +69,8 @@ class TestFilterPluginsByActivation extends TestCase {
             return $link . '?' . rtrim( $url, '&' );
         } );
 
-        $this->plugin_family->method('get_current_url')->willReturn( 'http%3A%2F%2Fexample.org%2Fwp-admin' );
+        Functions\when( 'wp_unslash' )->returnArg();
+        Functions\when( 'is_ssl' )->justReturn( true );
 
         if ( isset( $config['is_installed'] ) ) {
             Functions\when( 'file_exists' )->justReturn( $config['is_installed'] );

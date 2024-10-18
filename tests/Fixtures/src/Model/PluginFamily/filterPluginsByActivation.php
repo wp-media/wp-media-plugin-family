@@ -212,7 +212,7 @@ $expectedActivateTextIfPluginIsAlreadyInstalled = [
         'link'  => 'https://imagify.io/',
         'cta'   => [
             'text' => 'Activate',
-            'url'  => 'http://example.org/wp-admin/admin-post.php?action=install_imagify_from_partner_backwpup&_wpnonce=9a68f00b8d&_wp_http_referer=http%253A%252F%252Fexample.org%252Fwp-admin'
+            'url'  => 'http://example.org/wp-admin/admin-post.php?action=install_imagify_from_partner_backwpup&_wpnonce=9a68f00b8d&_wp_http_referer=https%3A%2F%2Fexample.org%2Fwp-admin'
         ],
     ],
     'seo-by-rank-math/rank-math' => [
@@ -267,7 +267,7 @@ $expectedUniqueInstallLinkForImagify = [
         'link'  => 'https://imagify.io/',
         'cta'   => [
             'text' => 'Install',
-            'url'  => 'http://example.org/wp-admin/admin-post.php?action=install_imagify_from_partner_uk-cookie-consent&_wpnonce=9a68f00b8d&_wp_http_referer=http%253A%252F%252Fexample.org%252Fwp-admin'
+            'url'  => 'http://example.org/wp-admin/admin-post.php?action=install_imagify_from_partner_uk-cookie-consent&_wpnonce=9a68f00b8d&_wp_http_referer=https%3A%2F%2Fexample.org%2Fwp-admin'
         ],
     ],
     'seo-by-rank-math/rank-math' => [
