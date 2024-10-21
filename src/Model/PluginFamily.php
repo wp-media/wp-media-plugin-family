@@ -13,9 +13,9 @@ class PluginFamily {
 	 * @var array
 	 */
 	protected $wp_rocket_referrer = [
-		'imagify-plugin' => 'imagify',
-		'seo-by-rank-math' => '',
-		'backwpup' => '',
+		'imagify-plugin'    => 'imagify',
+		'seo-by-rank-math'  => '',
+		'backwpup'          => '',
 		'uk-cookie-consent' => '',
 	];
 
@@ -53,7 +53,7 @@ class PluginFamily {
 				$plugin_path      = $plugin . '.php';
 				$plugin_slug      = dirname( $plugin );
 				$main_plugin_slug = dirname( $main_plugin );
-				$wpr_referrer = 'wp-rocket' !== $main_plugin_slug ? $this->wp_rocket_referrer[ $main_plugin_slug ] : '';
+				$wpr_referrer     = 'wp-rocket' !== $main_plugin_slug ? $this->wp_rocket_referrer[ $main_plugin_slug ] : '';
 
 				/**
 				 * Check for activated plugins and pop them out of the array
