@@ -196,7 +196,7 @@ $expectedActivateTextIfPluginIsAlreadyInstalled = [
         ],
         'title' => 'Speed Up Your Website, Instantly',
         'desc'  => 'WP Rocket is the easiest way to make your WordPress website faster and boost your Google PageSpeed score. Get more traffic, better engagement, and higher conversions effortlessly.',
-        'link'  => 'https://wp-rocket.me/?utm_source=imagify-coupon&utm_medium=plugin&utm_campaign=imagify',
+        'link'  => 'https://wp-rocket.me/?utm_source=-coupon&utm_medium=plugin&utm_campaign=',
         'cta'   => [
             'text' => 'Activate',
             'url'  => 'http://example.org/wp-admin/admin-post.php?action=plugin_family_install_wp-rocket&_wpnonce=9a68f00b8d&plugin_to_install=wp-rocket%2Fwp-rocket'
@@ -251,10 +251,10 @@ $expectedUniqueInstallLinkForImagify = [
         ],
         'title' => 'Speed Up Your Website, Instantly',
         'desc'  => 'WP Rocket is the easiest way to make your WordPress website faster and boost your Google PageSpeed score. Get more traffic, better engagement, and higher conversions effortlessly.',
-        'link'  => 'https://wp-rocket.me/?utm_source=imagify-coupon&utm_medium=plugin&utm_campaign=imagify',
+        'link'  => 'https://wp-rocket.me/?utm_source=-coupon&utm_medium=plugin&utm_campaign=',
         'cta'   => [
             'text' => 'Get it Now',
-            'url'  => 'https://wp-rocket.me/?utm_source=imagify-coupon&utm_medium=plugin&utm_campaign=imagify'
+            'url'  => 'https://wp-rocket.me/?utm_source=-coupon&utm_medium=plugin&utm_campaign='
         ],
     ],
     'imagify-plugin/imagify' => [

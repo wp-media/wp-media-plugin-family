@@ -6,6 +6,19 @@ namespace WPMedia\PluginFamily\Model;
  * Handles the data to be passed to the frontend.
  */
 class PluginFamily {
+
+	/**
+	 * An array of referrers for wp rocket.
+	 *
+	 * @var array
+	 */
+	protected $wp_rocket_referrer = [
+		'imagify-plugin'    => 'imagify',
+		'seo-by-rank-math'  => '',
+		'backwpup'          => '',
+		'uk-cookie-consent' => '',
+	];
+
 	/**
 	 * Get filtered plugins.
 	 *
@@ -40,6 +53,7 @@ class PluginFamily {
 				$plugin_path      = $plugin . '.php';
 				$plugin_slug      = dirname( $plugin );
 				$main_plugin_slug = dirname( $main_plugin );
+				$wpr_referrer     = 'wp-rocket' !== $main_plugin_slug ? $this->wp_rocket_referrer[ $main_plugin_slug ] : '';
 
 				/**
 				 * Check for activated plugins and pop them out of the array
@@ -96,10 +110,14 @@ class PluginFamily {
 
 				// Create unique CTA data for WP Rocket.
 				if ( 'wp-rocket/wp-rocket' === $plugin ) {
+					$url = 'https://wp-rocket.me/?utm_source=' . $wpr_referrer . '-coupon&utm_medium=plugin&utm_campaign=' . $wpr_referrer;
+
 					$plugins[ $cat ]['plugins'][ $plugin ]['cta'] = [
 						'text' => 'Get it Now',
-						'url'  => 'https://wp-rocket.me/?utm_source=imagify-coupon&utm_medium=plugin&utm_campaign=imagify',
+						'url'  => $url,
 					];
+
+					$plugins[ $cat ]['plugins'][ $plugin ]['link'] = $url;
 				}
 
 				// Set activation text.
