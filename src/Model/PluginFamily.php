@@ -60,7 +60,7 @@ class PluginFamily {
 				 * to re-add them back using array_merge to be displayed after
 				 * plugins that are not installed or not activated.
 				 */
-				if ( is_plugin_active( $plugin_path ) ) {
+				if ( is_plugin_active( $plugin_path ) && $main_plugin . '.php' !== $plugin_path ) {
 					// set cta data of active plugins.
 					$plugins[ $cat ]['plugins'][ $plugin ]['cta'] = [
 						'text' => 'Activated',
@@ -71,16 +71,18 @@ class PluginFamily {
 					$active_plugins[ $plugin ] = $plugins[ $cat ]['plugins'][ $plugin ];
 
 					// Remove active plugin from current category.
-					unset( $cat_data['plugins'][ $plugin ] );
+					$active_plugin = $plugins[ $cat ]['plugins'][ $plugin ];
+					unset( $plugins[ $cat ]['plugins'][ $plugin ] );
 
 					// Send active plugin to the end of array in current category.
-					$cat_data['plugins'][ $plugin ] = $plugins[ $cat ]['plugins'][ $plugin ];
+					$plugins[ $cat ]['plugins'][ $plugin ] = $active_plugin;
 
 					// Remove category with active plugin from current array.
+					$active_cat = $plugins[ $cat ];
 					unset( $plugins[ $cat ] );
 
 					// Send category with active plugins to the end of array.
-					$plugins[ $cat ] = $cat_data;
+					$plugins[ $cat ] = $active_cat;
 					continue;
 				}
 
