@@ -71,16 +71,18 @@ class PluginFamily {
 					$active_plugins[ $plugin ] = $plugins[ $cat ]['plugins'][ $plugin ];
 
 					// Remove active plugin from current category.
-					unset( $cat_data['plugins'][ $plugin ] );
+					$active_plugin = $plugins[ $cat ]['plugins'][ $plugin ];
+					unset( $plugins[ $cat ]['plugins'][ $plugin ] );
 
 					// Send active plugin to the end of array in current category.
-					$cat_data['plugins'][ $plugin ] = $plugins[ $cat ]['plugins'][ $plugin ];
+					$plugins[ $cat ]['plugins'][ $plugin ] = $active_plugin;
 
 					// Remove category with active plugin from current array.
+					$active_cat = $plugins[ $cat ];
 					unset( $plugins[ $cat ] );
 
 					// Send category with active plugins to the end of array.
-					$plugins[ $cat ] = $cat_data;
+					$plugins[ $cat ] = $active_cat;
 					continue;
 				}
 
