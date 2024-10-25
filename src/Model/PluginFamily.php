@@ -92,7 +92,7 @@ class PluginFamily {
 					'plugin_to_install' => rawurlencode( $plugin ),
 				];
 
-				if ( 'imagify-plugin' === $plugin_slug ) {
+				if ( 'imagify' === $plugin_slug ) {
 					$args = [
 						'action'           => 'install_imagify_from_partner_' . $main_plugin_slug,
 						'_wpnonce'         => wp_create_nonce( 'install_imagify_from_partner' ),
