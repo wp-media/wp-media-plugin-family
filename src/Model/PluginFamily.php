@@ -13,7 +13,7 @@ class PluginFamily {
 	 * @var array
 	 */
 	protected $wp_rocket_referrer = [
-		'imagify-plugin'    => 'imagify',
+		'imagify'           => 'imagify',
 		'seo-by-rank-math'  => '',
 		'backwpup'          => '',
 		'uk-cookie-consent' => '',
