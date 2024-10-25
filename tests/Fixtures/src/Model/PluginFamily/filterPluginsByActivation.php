@@ -13,7 +13,7 @@ $plugins = [
 				'desc'  => 'WP Rocket is the easiest way to make your WordPress website faster and boost your Google PageSpeed score. Get more traffic, better engagement, and higher conversions effortlessly.',
 				'link'  => 'https://wp-rocket.me/?utm_source=imagify-coupon&utm_medium=plugin&utm_campaign=imagify',
 			],
-			'imagify-plugin/imagify' => [
+			'imagify/imagify' => [
 				'logo'  => [
 					'file'  => 'logo-imagify.svg',
 					'width' => '50%',
@@ -116,7 +116,7 @@ $expectedActivePluginAsTheLastElement = [
     'optimize_performance' => [
 		'title'   => 'Optimize Performance',
 		'plugins' => [
-			'imagify-plugin/imagify' => [
+			'imagify/imagify' => [
 				'logo'  => [
 					'file'  => 'logo-imagify.svg',
 					'width' => '50%',
@@ -202,7 +202,7 @@ $expectedActivateTextIfPluginIsAlreadyInstalled = [
             'url'  => 'http://example.org/wp-admin/admin-post.php?action=plugin_family_install_wp-rocket&_wpnonce=9a68f00b8d&plugin_to_install=wp-rocket%2Fwp-rocket'
         ],
     ],
-    'imagify-plugin/imagify' => [
+    'imagify/imagify' => [
         'logo'  => [
             'file'  => 'logo-imagify.svg',
             'width' => '50%',
@@ -257,7 +257,7 @@ $expectedUniqueInstallLinkForImagify = [
             'url'  => 'https://wp-rocket.me/?utm_source=-coupon&utm_medium=plugin&utm_campaign='
         ],
     ],
-    'imagify-plugin/imagify' => [
+    'imagify/imagify' => [
         'logo'  => [
             'file'  => 'logo-imagify.svg',
             'width' => '50%',
@@ -452,14 +452,14 @@ return [
             'plugins' => $plugins,
             'main_plugin' => 'wp-rocket/wp-rocket',
             'order' => 'categorized',
-            'active_plugin' => 'imagify-plugin/imagify.php',
+            'active_plugin' => 'imagify/imagify.php',
         ],
         'expected' => $expectedActivePluginAsTheLastElement,
     ],
     'testShouldReturnCategoryWithActivePluginAsTheLastElement' => [
         'config' => [
             'plugins' => $plugins,
-            'main_plugin' => 'imagify-plugin/imagify',
+            'main_plugin' => 'imagify/imagify',
             'order' => 'uncategorized',
             'active_plugin' => 'seo-by-rank-math/rank-math.php',
         ],

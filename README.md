@@ -25,7 +25,7 @@ class View {
     }
 
     public function display_page() {
-		$plugin_family = $this->plugin_family->get_filtered_plugins( 'imagify-plugin/imagify' );
+		$plugin_family = $this->plugin_family->get_filtered_plugins( 'imagify/imagify' );
 
 		$data = [
 			'plugin_family' => $plugin_family['uncategorized'],
