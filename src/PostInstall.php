@@ -5,7 +5,7 @@ namespace WPMedia\PluginFamily;
 use Composer\Script\Event;
 
 class PostInstall {
-    private $files = [
+    private static $files = [
         'PluginFamily',
         'wp_media_plugins',
     ];
@@ -22,7 +22,7 @@ class PostInstall {
             return;
         }
 
-        foreach ( $this->files as $file ) {
+        foreach ( self::$files as $file ) {
             $path = 'Model/' . $file . '.php';
 
             if ( ! file_exists( $path ) ) {
