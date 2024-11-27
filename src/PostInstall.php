@@ -27,7 +27,6 @@ class PostInstall {
         $output = $event->getIO();
         $composer = $event->getComposer();
         $extra = $composer->getPackage()->getExtra();
-        $error_message = 'Post-package installation script failed.';
 
         if ( ! isset( $extra['plugin_domain'] ) ) {
             $output->writeError( self::colorize( 'Plugin domain is not set in the composer extra configuration.', 'red' ) );
@@ -82,7 +81,7 @@ class PostInstall {
      * @param string $color Color on the console.
      * @return string
      */
-    private static function colorize(string $message, string $color): string {
+    private static function colorize( string $message, string $color ): string {
         $colors = [
             'red' => "\033[31m",
             'green' => "\033[32m",
