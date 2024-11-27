@@ -106,7 +106,7 @@ class PluginFamily {
 
 				// Set Installation link.
 				$plugins[ $cat ]['plugins'][ $plugin ]['cta'] = [
-					'text' => 'Install',
+					'text' => __( 'Install', '%domain%' ),
 					'url'  => $install_activate_url,
 				];
 
