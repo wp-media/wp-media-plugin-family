@@ -23,7 +23,7 @@ class PostInstall {
         }
 
         foreach ( self::$files as $file ) {
-            $path = 'Model/' . $file . '.php';
+            $path = __DIR__ . '/Model/' . $file . '.php';
 
             if ( ! file_exists( $path ) ) {
                 $output->writeError( 'Could not find file: ' . $path . ', Does it exist?' );
