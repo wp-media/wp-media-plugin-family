@@ -44,8 +44,9 @@ class PostInstall {
                 $output->writeError( 'Failed to write the updated content to the file: ' . $path );
                 return;
             }
-
-            $io->write( 'Text domain has been updated.' );
         }
+
+        // Output success feed.
+        $output->write( 'Text domain has been updated.' );
     }
 }
