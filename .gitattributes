@@ -6,4 +6,5 @@ patchwork.json export-ignore
 phpcs.xml export-ignore
 phpstan.neon.dist export-ignore
 README.md export-ignore
+phpstan-stubs export-ignore
 

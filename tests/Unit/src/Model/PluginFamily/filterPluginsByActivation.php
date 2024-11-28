@@ -42,6 +42,7 @@ class TestFilterPluginsByActivation extends TestCase {
 	 * @dataProvider configTestData
 	 */
 	public function testShouldReturnExpected( $config, $expected ) {
+        $this->stubTranslationFunctions();
         $this->config = $config;
 
         if ( 'both' === $config['order'] ) {
